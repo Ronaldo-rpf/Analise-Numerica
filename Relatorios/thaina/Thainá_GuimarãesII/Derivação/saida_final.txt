@@ -1,0 +1,85 @@
+
+[Método: Primeira Ordem]
+Função 1: -109.074
+Função 2: -119.985
+Função 3: -122.713
+Função 4: -130.897
+Função 5: -136.352
+Função 6: -141.808
+Função 7: -149.991
+Função 8: -152.719
+Função 9: -163.631
+Função 10: -0.00649969
+Função 11: -0.019502
+Função 12: 0
+
+[Método: Primeira Ordem]
+Função 1: -109.074
+Função 2: -119.985
+Função 3: -122.713
+Função 4: -130.897
+Função 5: -136.352
+Função 6: -141.808
+Função 7: -149.991
+Função 8: -152.719
+Função 9: -163.631
+Função 10: -0.00649969
+Função 11: -0.019502
+Função 12: 0
+
+[Método: Segunda Ordem]
+Função 1: 327.222
+Função 2: 359.956
+Função 3: 368.14
+Função 4: 392.69
+Função 5: 409.057
+Função 6: 425.424
+Função 7: 449.974
+Função 8: 458.158
+Função 9: 490.892
+Função 10: 0.0162694
+Função 11: 0.0485743
+Função 12: 0
+
+[Método: Primeira Ordem]
+Função 1: -3.6732e-06
+Função 2: 7
+Função 3: 1
+
+[Método: Primeira Ordem]
+Função 1: 4
+Função 2: 0.000796327
+Função 3: 1
+
+[Método: Segunda Ordem]
+Função 1: 2
+Função 2: -0.999999
+Função 3: 0.999999
+
+[Método: Primeira Ordem]
+Função 1: -109.074
+Função 2: -119.985
+Função 3: -122.713
+Função 4: -130.897
+Função 5: -136.352
+Função 6: -141.808
+Função 7: -149.991
+Função 8: -152.719
+Função 9: -163.631
+Função 10: -0.00649969
+Função 11: -0.019502
+Função 12: 0
+
+[Método: Segunda Ordem]
+Função 1: 327.222
+Função 2: 359.956
+Função 3: 368.14
+Função 4: 392.69
+Função 5: 409.057
+Função 6: 425.424
+Função 7: 449.974
+Função 8: 458.158
+Função 9: 490.892
+Função 10: 0.0162694
+Função 11: 0.0485743
+Função 12: 0

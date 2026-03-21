@@ -1,0 +1,2 @@
+Solução encontrada: [3.658537, 12.195122, -0.0]
+Tempo de execução: 0.000031 segundos

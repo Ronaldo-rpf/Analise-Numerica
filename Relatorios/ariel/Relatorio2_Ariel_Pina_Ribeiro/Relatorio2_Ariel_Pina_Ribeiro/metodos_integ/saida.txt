@@ -1,0 +1,13 @@
+Método: Quadratura de Gauss (10 pontos)
+Integral da função 1: 1.2181e+20
+Integral da função 2: 1.3399e+20
+Integral da função 3: 1.3704e+20
+Integral da função 4: 1.4618e+20
+Integral da função 5: 1.5227e+20
+Integral da função 6: 1.5836e+20
+Integral da função 7: 1.6750e+20
+Integral da função 8: 1.7055e+20
+Integral da função 9: 1.8273e+20
+Integral da função 10: 1.6319e+06
+Integral da função 11: 1.9005e+10
+Integral da função 12: 4.6407e-01

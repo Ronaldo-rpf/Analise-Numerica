@@ -1,0 +1,13 @@
+Método: Derivada Numérica de Segunda Ordem
+Função 1: 327.222
+Função 2: 359.956
+Função 3: 368.14
+Função 4: 392.69
+Função 5: 409.057
+Função 6: 425.424
+Função 7: 449.974
+Função 8: 458.158
+Função 9: 490.892
+Função 10: 0.0162694
+Função 11: 0.0485743
+Função 12: 0

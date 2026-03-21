@@ -1,0 +1,5 @@
+Método escolhido: falsa_posicao
+Raiz aproximada: 1.1031794041239862
+Erro estimado: 0.06612698163383968
+Iterações: 1000
+Tempo: 0.001861 segundos

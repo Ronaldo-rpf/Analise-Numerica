@@ -1,0 +1,8 @@
+=== RESULTADOS DE INTEGRAÇÃO: TRAPEZIO_MULTIPLO ===
+
+[Função 1]
+Expressão: (1 / (0.005 * (2 * pi)**0.5)) * exp(-0.5 * ((x - 4.991)/0.005)**2)
+Intervalo: [4.991, 5.0]
+Subdivisões: 1
+Resultado da integral: 4.301032e-01
+------------------------------------------------------------
