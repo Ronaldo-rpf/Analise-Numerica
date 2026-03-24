@@ -1,5 +1,4 @@
 import math
-import os
 
 def metodo_falsa_posicao(f, xl, xu, es, arquivo_saida, max_iter=100):
     """

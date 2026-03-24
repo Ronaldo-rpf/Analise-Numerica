@@ -1,5 +1,6 @@
 import math
-import os
+
+# Os intervalos (limites) precisam mudar de sinal.
 
 def metodo_bisseccao(f, xl, xu, es, arquivo_saida, max_iter=100):
     """
