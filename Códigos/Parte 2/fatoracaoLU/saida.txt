@@ -1,0 +1,31 @@
+====== RELATORIO DE SISTEMAS LINEARES ======
+Metodo: Fatoracao LU
+Tamanho do sistema: 3x3
+============================================
+
+--- FASE 1: FATORACAO A = L * U ---
+
+Matriz [L] (Inferior com os fatores):
+    1.0000    0.0000    0.0000
+    0.0333    1.0000    0.0000
+    0.1000   -0.0271    1.0000
+
+Matriz [U] (Superior):
+    3.0000   -0.1000   -0.2000
+    0.0000    7.0033   -0.2933
+    0.0000    0.0000   10.0120
+
+--- FASE 2: SUBSTITUICAO PROGRESSIVA (L * y = b) ---
+y(1) = 7.8500
+y(2) = -19.5617
+y(3) = 70.0843
+
+--- FASE 3: SUBSTITUICAO REGRESSIVA (U * x = y) ---
+x(3) = 7.0000
+x(2) = -2.5000
+x(1) = 3.0000
+
+---------------------------------------------
+SOLUCAO FINAL ENCONTRADA:
+Vetor x = (3.0000, -2.5000, 7.0000)
+---------------------------------------------

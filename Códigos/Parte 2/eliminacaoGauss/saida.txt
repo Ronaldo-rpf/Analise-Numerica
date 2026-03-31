@@ -1,0 +1,22 @@
+====== RELATORIO DE SISTEMAS LINEARES ======
+Tamanho do sistema: 3x3
+============================================
+
+--- FASE 1: ELIMINACAO PROGRESSIVA ---
+
+Eliminando variaveis abaixo do pivo A(1, 1) = 3.0:
+Linha 2 = Linha 2 - (0.0333) * Linha 1
+Linha 3 = Linha 3 - (0.1000) * Linha 1
+
+Eliminando variaveis abaixo do pivo A(2, 2) = 7.003333333333333:
+Linha 3 = Linha 3 - (-0.0271) * Linha 2
+
+--- FASE 2: SUBSTITUICAO REGRESSIVA ---
+x(3) = 7.0000
+x(2) = -2.5000
+x(1) = 3.0000
+
+---------------------------------------------
+SOLUCAO FINAL ENCONTRADA:
+Vetor x = (3.0000, -2.5000, 7.0000)
+---------------------------------------------
