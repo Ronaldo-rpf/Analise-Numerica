@@ -1,0 +1,32 @@
+====== RELATORIO DE SISTEMAS LINEARES ======
+Metodo: Jacobi
+Tamanho do sistema: 3x3
+============================================
+
+--- INICIO DO METODO DE JACOBI ---
+Tolerancia alvo: 0.01
+
+--- Iteracao 1 ---
+x(1) calculado = 2.616667
+x(2) calculado = -2.757143
+x(3) calculado = 7.140000
+Erro relativo maximo atual: 1.000000
+
+--- Iteracao 2 ---
+x(1) calculado = 3.000762
+x(2) calculado = -2.488524
+x(3) calculado = 7.006357
+Erro relativo maximo atual: 0.054821
+
+--- Iteracao 3 ---
+x(1) calculado = 3.000806
+x(2) calculado = -2.499738
+x(3) calculado = 7.000207
+Erro relativo maximo atual: 0.001602
+
+CONVERGENCIA ATINGIDA na iteracao 3!
+
+---------------------------------------------
+SOLUCAO FINAL ENCONTRADA:
+Vetor x = (3.0008, -2.4997, 7.0002)
+---------------------------------------------

@@ -1,0 +1,39 @@
+====== RELATORIO DE SISTEMAS LINEARES ======
+Metodo: Gauss-Seidel
+Tamanho do sistema: 3x3
+============================================
+
+--- INICIO DO METODO DE GAUSS-SEIDEL ---
+Tolerancia alvo: 0.01%
+Fator de relaxamento: 1.0
+
+--- Iteracao 1 ---
+x(1) calculado = 2.616667
+x(2) calculado = -2.794524
+x(3) calculado = 7.005610
+Maior erro relativo atual: 100.000000%
+
+--- Iteracao 2 ---
+x(1) calculado = 2.990557
+x(2) calculado = -2.499625
+x(3) calculado = 7.000291
+Maior erro relativo atual: 12.502350%
+
+--- Iteracao 3 ---
+x(1) calculado = 3.000032
+x(2) calculado = -2.499988
+x(3) calculado = 6.999999
+Maior erro relativo atual: 0.315843%
+
+--- Iteracao 4 ---
+x(1) calculado = 3.000000
+x(2) calculado = -2.500000
+x(3) calculado = 7.000000
+Maior erro relativo atual: 0.001052%
+
+CONVERGENCIA ATINGIDA na iteracao 4!
+
+---------------------------------------------
+SOLUCAO FINAL ENCONTRADA:
+Vetor x = (3.0000, -2.5000, 7.0000)
+---------------------------------------------

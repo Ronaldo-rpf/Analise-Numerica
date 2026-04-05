@@ -1,4 +1,5 @@
-# Menos uso computacional para quando os valores de bmudarem, dividi a matriz A em dua A = LU, mas quando muda b não precisaria recalcular LU de novo
+# Método Direto
+# Menos uso computacional para quando os valores de b mudarem, dividi a matriz A em dua A = LU, mas quando muda b não precisaria recalcular LU de novo
 # A matriz deve ser quadrada, pivô não pode ser 0, arredondamentos erram às vezes
 
 def fatoracao_lu(A, b, arquivo_saida):

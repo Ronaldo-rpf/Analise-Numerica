@@ -1,3 +1,4 @@
+# Método Direto
 
 def eliminacao_gauss(A, b, arquivo_saida):
     """
