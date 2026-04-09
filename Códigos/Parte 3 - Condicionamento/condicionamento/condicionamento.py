@@ -157,7 +157,7 @@ try:
     n = len(A)
 
     with open(caminho_saida, 'w') as file_out:
-        file_out.write("====== RELATORIO DE MAL CONDICIONAMENTO ======\n")
+        file_out.write("====== RELATORIO DE CONDICIONAMENTO ======\n")
         file_out.write(f"Tamanho da matriz: {n}x{n}\n")
         file_out.write("Norma utilizada: Norma Infinita (Norma Linha)\n")
         file_out.write("==============================================\n\n")

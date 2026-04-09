@@ -1,4 +1,4 @@
-====== RELATORIO DE MAL CONDICIONAMENTO ======
+====== RELATORIO DE CONDICIONAMENTO ======
 Tamanho da matriz: 9x9
 Norma utilizada: Norma Infinita (Norma Linha)
 ==============================================
