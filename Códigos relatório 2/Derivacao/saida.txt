@@ -1,0 +1,36 @@
+==================================================
+RELATORIO: DERIVADA 1a ORDEM | FUNCAO 1
+Alvo: f(x) = x**3 - 2*x**2 + x - 5 no ponto x0 = 2.0
+
+--- FASE 1: AVALIACAO DOS PONTOS VIZINHOS ---
+Metodo: Diferencas Finitas Centrais (passo h = 1e-05)
+f(x0 + h) = f(2.000010) = -2.999950
+f(x0 - h) = f(1.999990) = -3.000050
+
+--- FASE 2: APLICACAO DA FORMULA ---
+Formula: f'(x) = [f(x0 + h) - f(x0 - h)] / (2h)
+Calculo executado: [-2.999950 - -3.000050] / 2e-05
+
+---------------------------------------------
+RESULTADO FINAL:
+f'(2.0) ~= 5.000000
+---------------------------------------------
+
+==================================================
+RELATORIO: DERIVADA 1a ORDEM | FUNCAO 2
+Alvo: f(x) = exp(x) * sin(x) no ponto x0 = 0.0
+
+--- FASE 1: AVALIACAO DOS PONTOS VIZINHOS ---
+Metodo: Diferencas Finitas Centrais (passo h = 1e-05)
+f(x0 + h) = f(0.000010) = 0.000010
+f(x0 - h) = f(-0.000010) = -0.000010
+
+--- FASE 2: APLICACAO DA FORMULA ---
+Formula: f'(x) = [f(x0 + h) - f(x0 - h)] / (2h)
+Calculo executado: [0.000010 - -0.000010] / 2e-05
+
+---------------------------------------------
+RESULTADO FINAL:
+f'(0.0) ~= 1.000000
+---------------------------------------------
+

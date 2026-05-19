@@ -1,0 +1,23 @@
+====== RELATORIO DE PROCESSAMENTO ======
+
+==================================================
+EQUACAO ANALISADA 1: f(x) = (1 / (0.005 * sqrt(2 * pi))) * exp(-0.5 * ((x - 4.991) / 0.005)**2)
+Intervalo de integracao: [4.991, 5.0]
+==================================================
+
+Metodo: Extrapolacao de Richardson
+Estrategia: Combinar duas malhas de Trapezio (n1=1000 e n2=2000)
+
+--- FASE 1: OBTENCAO DOS CALCULOS BASE ---
+I(h1) [Integral obtida com n=1000] = 0.464070
+I(h2) [Integral obtida com n=2000] = 0.464070
+
+--- FASE 2: EXTRAPOLACAO ALGEBRICA ---
+Formula: R = I(h2) + [I(h2) - I(h1)] / 3
+Termo de correcao estimado = 0.000000
+Calculo final: 0.464070 + (0.464070 - 0.464070) / 3
+
+--------------------------------------------------
+VALOR DA INTEGRAL ENCONTRADO: I = 0.464070
+--------------------------------------------------
+
