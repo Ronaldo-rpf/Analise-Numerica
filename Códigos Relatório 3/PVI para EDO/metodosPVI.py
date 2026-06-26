@@ -24,7 +24,7 @@ def avaliar_funcao_edo(expressao, x_val, y_val):
 def ler_arquivo_edo(caminho):
     """
     Lê os parâmetros do Problema de Valor Inicial (PVI) do arquivo texto.
-    
+        
     Parâmetros:
     caminho : String com o nome/caminho do arquivo.
     """
@@ -42,6 +42,15 @@ def ler_arquivo_edo(caminho):
 def gravar_cabecalho_relatorio(arquivo_saida, nome_metodo, funcao_str, x0, y0, h, n):
     """
     Escreve as informações iniciais do problema no arquivo de saída.
+    
+    Parâmetros:
+    arquivo_saida : Objeto do arquivo de texto que receberá o relatório.
+    nome_metodo   : String contendo o nome do método numérico em execução.
+    funcao_str    : A função EDO original em formato de string.
+    x0            : Valor numérico inicial da variável independente x.
+    y0            : Valor numérico inicial da variável dependente y.
+    h             : Tamanho numérico do passo de incremento.
+    n             : Número inteiro representando o total de iterações a serem realizadas.
     """
     arquivo_saida.write(f"====== RELATORIO: METODO DE {nome_metodo.upper()} ======\n\n")
     arquivo_saida.write(f"Equacao Diferencial: dy/dx = {funcao_str}\n")
@@ -52,6 +61,10 @@ def gravar_cabecalho_relatorio(arquivo_saida, nome_metodo, funcao_str, x0, y0, h
 def formatar_e_gravar_resultado(arquivo_saida, pontos):
     """
     Formata a lista de pontos processados e escreve o resultado final no arquivo.
+
+    Parâmetros:
+    arquivo_saida : Objeto do arquivo de texto que receberá o relatório.
+    pontos        : Lista de tuplas (x, y) contendo todas as coordenadas calculadas desde a iteração 0 até a n.
     """
     arquivo_saida.write("\n" + "=" * 45 + "\n")
     arquivo_saida.write("RESULTADO FINAL - PONTOS ENCONTRADOS:\n")
@@ -68,6 +81,14 @@ def metodo_euler(funcao_str, x0, y0, h, n, arquivo_saida):
     """
     Resolve uma EDO utilizando o Método de Euler Simples.
     Ele assume que a inclinação inicial se mantém constante durante todo o passo.
+
+    Parâmetros:
+    funcao_str    : A função EDO em formato de string.
+    x0            : Valor inicial da variável x.
+    y0            : Valor inicial da variável y.
+    h             : Tamanho do passo de incremento.
+    n             : Número total de iterações.
+    arquivo_saida : Objeto do arquivo de texto para escrever o relatório passo a passo.
     """
     gravar_cabecalho_relatorio(arquivo_saida, "Euler", funcao_str, x0, y0, h, n)
     
@@ -96,6 +117,14 @@ def metodo_heun(funcao_str, x0, y0, h, n, arquivo_saida):
     """
     Resolve uma EDO utilizando o Método de Heun (Preditor-Corretor).
     Ele tenta prever o ponto final e usa a média das inclinações (inicial e final) para dar o passo real.
+
+    Parâmetros:
+    funcao_str    : A função EDO em formato de string.
+    x0            : Valor inicial da variável independente x.
+    y0            : Valor inicial da variável dependente y.
+    h             : Tamanho do passo de incremento.
+    n             : Número total de iterações.
+    arquivo_saida : Objeto do arquivo de texto para escrever o relatório detalhado.
     """
     gravar_cabecalho_relatorio(arquivo_saida, "Heun (Preditor-Corretor)", funcao_str, x0, y0, h, n)
     
@@ -133,6 +162,14 @@ def metodo_euler_modificado(funcao_str, x0, y0, h, n, arquivo_saida):
     """
     Resolve uma EDO utilizando o Método de Euler Modificado (também chamado de Ponto Médio).
     Ele dá meio passo para encontrar a inclinação central e a utiliza para o passo inteiro.
+
+    Parâmetros:
+    funcao_str    : A função EDO em formato de string.
+    x0            : Valor inicial da variável independente x.
+    y0            : Valor inicial da variável dependente y.
+    h             : Tamanho do passo de incremento.
+    n             : Número total de iterações.
+    arquivo_saida : Objeto do arquivo de texto para registrar o histórico dos cálculos.
     """
     gravar_cabecalho_relatorio(arquivo_saida, "Euler Modificado (Ponto Medio)", funcao_str, x0, y0, h, n)
     
@@ -169,6 +206,14 @@ def metodo_ralston(funcao_str, x0, y0, h, n, arquivo_saida):
     """
     Resolve uma EDO utilizando o Método de Ralston.
     É uma variação que avalia a segunda inclinação a 3/4 do caminho, usando uma média ponderada para minimizar o erro.
+
+    Parâmetros:
+    funcao_str    : A função EDO em formato de string.
+    x0            : Valor inicial da variável independente x.
+    y0            : Valor inicial da variável dependente y.
+    h             : Tamanho do passo de incremento.
+    n             : Número total de iterações.
+    arquivo_saida : Objeto do arquivo de texto para gravar o passo a passo.
     """
     gravar_cabecalho_relatorio(arquivo_saida, "Ralston", funcao_str, x0, y0, h, n)
     
@@ -202,6 +247,58 @@ def metodo_ralston(funcao_str, x0, y0, h, n, arquivo_saida):
     formatar_e_gravar_resultado(arquivo_saida, pontos)
     return pontos
 
+def metodo_runge_kutta_4(funcao_str, x0, y0, h, n, arquivo_saida):
+    """
+    Resolve uma EDO utilizando o Método de Runge-Kutta de 4ª Ordem (RK4).
+    Calcula quatro inclinações (k1, k2, k3, k4) para obter uma média ponderada altamente precisa.
+
+    Parâmetros:
+    funcao_str    : A função EDO em formato de string.
+    x0            : Valor inicial da variável independente x.
+    y0            : Valor inicial da variável dependente y.
+    h             : Tamanho do passo de incremento.
+    n             : Número total de iterações.
+    arquivo_saida : Objeto do arquivo de texto com a saída da resolução.
+    """
+    gravar_cabecalho_relatorio(arquivo_saida, "Runge-Kutta 4a Ordem", funcao_str, x0, y0, h, n)
+    
+    x_atual, y_atual = x0, y0
+    pontos = [(x_atual, y_atual)]
+    arquivo_saida.write(f"Iteracao 0: x = {x_atual:.4f}, y = {y_atual:.4f}\n")
+    
+    for i in range(1, n + 1):
+        # k1: Inclinação no início
+        k1 = avaliar_funcao_edo(funcao_str, x_atual, y_atual)
+        
+        # k2: Inclinação no ponto médio usando k1
+        x_meio = x_atual + (h / 2.0)
+        y_meio_k1 = y_atual + (h / 2.0) * k1
+        k2 = avaliar_funcao_edo(funcao_str, x_meio, y_meio_k1)
+        
+        # k3: Nova inclinação no ponto médio usando k2
+        y_meio_k2 = y_atual + (h / 2.0) * k2
+        k3 = avaliar_funcao_edo(funcao_str, x_meio, y_meio_k2)
+        
+        # k4: Inclinação no final do intervalo usando k3
+        x_fim = x_atual + h
+        y_fim_k3 = y_atual + h * k3
+        k4 = avaliar_funcao_edo(funcao_str, x_fim, y_fim_k3)
+        
+        # Passo definitivo usando a média ponderada clássica do RK4
+        x_prox = x_atual + h
+        y_prox = y_atual + (h / 6.0) * (k1 + 2*k2 + 2*k3 + k4)
+        
+        # Gravando os detalhes das 4 inclinações no relatório
+        arquivo_saida.write(f"Iteracao {i}:\n")
+        arquivo_saida.write(f"  k1 = {k1:.4f} | k2 = {k2:.4f} | k3 = {k3:.4f} | k4 = {k4:.4f}\n")
+        arquivo_saida.write(f"  y_prox = {y_atual:.4f} + ({h}/6) * ({k1:.4f} + 2*{k2:.4f} + 2*{k3:.4f} + {k4:.4f}) = {y_prox:.4f}\n")
+        
+        x_atual, y_atual = x_prox, y_prox
+        pontos.append((x_atual, y_atual))
+        
+    formatar_e_gravar_resultado(arquivo_saida, pontos)
+    return pontos
+
 # ==========================================
 # CÓDIGO PRINCIPAL: LEITURA E MENU
 # ==========================================
@@ -215,10 +312,11 @@ def main():
     print("2 - Metodo de Euler Modificado (Ponto Medio)")
     print("3 - Metodo de Heun")
     print("4 - Metodo de Ralston")
-    print("5 - Sair")
+    print("5 - Metodo de Runge-Kutta (4a Ordem)")
+    print("6 - Sair")
     opcao = input("Escolha o metodo desejado: ")
 
-    if opcao == '5':
+    if opcao == '6':
         print("Saindo...")
         return
 
@@ -238,6 +336,8 @@ def main():
             pontos = metodo_heun(funcao_str, x0, y0, h, n, file_out)
         elif opcao == '4':
             pontos = metodo_ralston(funcao_str, x0, y0, h, n, file_out)
+        elif opcao == '5':
+            pontos = metodo_runge_kutta_4(funcao_str, x0, y0, h, n, file_out)
         else:
             print("Opcao invalida.")
             return
