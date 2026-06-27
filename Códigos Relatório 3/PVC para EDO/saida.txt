@@ -1,25 +1,28 @@
-====== RELATORIO: METODO DO TIRO (SHOOTING) ======
+====== RELATORIO: METODO DIFERENCAS FINITAS ======
 
 EDO de 2a Ordem: y'' = -y
 Contorno Inicial: y(0.0) = 0.0
 Contorno Final (Alvo): y(3.14) = 0.0
 Passo (h) = 0.5 | Tolerancia = 0.001
 
---- FASE 1: CALIBRANDO A MIRA (Metodo da Secante) ---
-Tiro 1: Inclinacao inicial (z0) = 0.0000 | Atingiu y(3.14) = 0.0000 | Erro = 0.0000
+--- FASE 1: EXTRAINDO COEFICIENTES p(x), q(x), r(x) ---
+Assumindo EDO linear da forma: y'' = p(x)*y' + q(x)*y + r(x)
 
-=> ALVO ATINGIDO! Inclinacao ideal encontrada: z = 0.0000
+--- FASE 2: MONTANDO O SISTEMA TRIDIAGONAL ---
+Ponto interno 1 (x = 0.5000): p=0.0000, q=-1.0000, r=0.0000
+  Eq: (-1.0000)*y_0 + (1.7500)*y_1 + (-1.0000)*y_2 = 0.0000
+Ponto interno 2 (x = 1.0000): p=0.0000, q=-1.0000, r=0.0000
+  Eq: (-1.0000)*y_1 + (1.7500)*y_2 + (-1.0000)*y_3 = -0.0000
+Ponto interno 3 (x = 1.5000): p=0.0000, q=-1.0000, r=0.0000
+  Eq: (-1.0000)*y_2 + (1.7500)*y_3 + (-1.0000)*y_4 = -0.0000
+Ponto interno 4 (x = 2.0000): p=0.0000, q=-1.0000, r=0.0000
+  Eq: (-1.0000)*y_3 + (1.7500)*y_4 + (-1.0000)*y_5 = -0.0000
+Ponto interno 5 (x = 2.5000): p=0.0000, q=-1.0000, r=0.0000
+  Eq: (-1.0000)*y_4 + (1.7500)*y_5 + (-1.0000)*y_6 = 0.0000
 
---- GRAVANDO TRAJETO DO TIRO CERTEIRO (Passo a Passo RK4) ---
-Iteracao 0: x = 0.0000, y = 0.0000, z(y') = 0.0000
-Iteracao 1: x = 0.5000 -> y_prox = 0.0000
-Iteracao 2: x = 1.0000 -> y_prox = 0.0000
-Iteracao 3: x = 1.5000 -> y_prox = 0.0000
-Iteracao 4: x = 2.0000 -> y_prox = 0.0000
-Iteracao 5: x = 2.5000 -> y_prox = 0.0000
-Iteracao 6: x = 3.0000 -> y_prox = 0.0000
+--- FASE 3: RESOLVENDO O SISTEMA (Algoritmo de Thomas) ---
 
 =============================================
 RESULTADO FINAL - PONTOS ENCONTRADOS:
-Pontos: ( (0.0000, 0.0000), (0.5000, 0.0000), (1.0000, 0.0000), (1.5000, 0.0000), (2.0000, 0.0000), (2.5000, 0.0000), (3.0000, 0.0000) )
+Pontos: ( (0.0000, 0.0000), (0.5000, 0.0000), (1.0000, 0.0000), (1.5000, 0.0000), (2.0000, 0.0000), (2.5000, 0.0000), (3.1400, 0.0000) )
 =============================================

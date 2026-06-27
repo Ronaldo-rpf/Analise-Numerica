@@ -237,7 +237,7 @@ def resolver_sistema_tridiagonal(a, b, c, d): # uma matriz com três linhas na d
 def metodo_diferencas_finitas(funcao_str, x0, y0, xf, yf, h, tol, arquivo_saida):
     """
     Resolve um PVC linear utilizando o Método das Diferenças Finitas.
-    Assume que a EDO tem a forma linear y'' = p(x)y' + q(x)y + r(x).
+    Assume que a EDO tem a forma linear y'' = p(x)y' + q(x)y + r(x). Ou seja, p é o coeficiente de y', q de y e r de x.
     
     Parâmetros:
     funcao_str    : A EDO de 2ª ordem em formato de string (usando z para y').
@@ -270,7 +270,7 @@ def metodo_diferencas_finitas(funcao_str, x0, y0, xf, yf, h, tol, arquivo_saida)
     c = [0.0] * n_pontos_internos
     d = [0.0] * n_pontos_internos
     
-    xs = [x0 + i * h for i in range(1, n_pontos_internos + 1)]
+    xs = [x0 + i * h for i in range(1, n_pontos_internos + 1)] # Todos os pontos do eixo x, toda a sua malha
     
     arquivo_saida.write("--- FASE 2: MONTANDO O SISTEMA TRIDIAGONAL ---\n")
     
@@ -278,26 +278,26 @@ def metodo_diferencas_finitas(funcao_str, x0, y0, xf, yf, h, tol, arquivo_saida)
         xi = xs[i]
         
         # Truque para extrair p, q, r dinamicamente da string
-        r_i = avaliar_funcao_pvc(funcao_str, xi, 0, 0)
-        q_i = avaliar_funcao_pvc(funcao_str, xi, 1, 0) - r_i
-        p_i = avaliar_funcao_pvc(funcao_str, xi, 0, 1) - r_i
+        r_i = avaliar_funcao_pvc(funcao_str, xi, 0, 0)          # Se zerarmos o q e o p sobra o r.
+        q_i = avaliar_funcao_pvc(funcao_str, xi, 1, 0) - r_i    # Zeramos o p e como já sabemos quanto vale r subtraímos ele.
+        p_i = avaliar_funcao_pvc(funcao_str, xi, 0, 1) - r_i    # Mesma ideia do q.
         
         # Formulação das Diferenças Finitas Centrais
-        coef_y_ant = -(1.0 + (h / 2.0) * p_i)
-        coef_y_atual = (2.0 + (h ** 2) * q_i)
-        coef_y_prox = -(1.0 - (h / 2.0) * p_i)
-        termo_indep = -(h ** 2) * r_i
+        coef_y_ant = -(1.0 + (h / 2.0) * p_i)   # a
+        coef_y_atual = (2.0 + (h ** 2) * q_i)   # b
+        coef_y_prox = -(1.0 - (h / 2.0) * p_i)  # c
+        termo_indep = -(h ** 2) * r_i           # d
         
         # Ajustando os limites das bordas (onde conhecemos y0 e yf)
-        if i == 0:
+        if i == 0: # se for o primeiro ponto não tem a, porque ele é o próprio y0
             termo_indep -= coef_y_ant * y0
             b[i] = coef_y_atual
             c[i] = coef_y_prox
-        elif i == n_pontos_internos - 1:
+        elif i == n_pontos_internos - 1: # se for o último ponto não tem c, porque ele é o próprio yf  
             termo_indep -= coef_y_prox * yf
             a[i] = coef_y_ant
             b[i] = coef_y_atual
-        else:
+        else: # se for os do meio possuem todos e guardamos nas letras normalmente
             a[i] = coef_y_ant
             b[i] = coef_y_atual
             c[i] = coef_y_prox
@@ -313,8 +313,8 @@ def metodo_diferencas_finitas(funcao_str, x0, y0, xf, yf, h, tol, arquivo_saida)
     
     # Agrupando os pontos calculados com as bordas originais
     pontos_finais = [(x0, y0)]
-    for i in range(n_pontos_internos):
-        pontos_finais.append((xs[i], ys_internos[i]))
+    for i in range(n_pontos_internos): # os x's
+        pontos_finais.append((xs[i], ys_internos[i])) # agrupa com os respectivos y's
     pontos_finais.append((xf, yf))
     
     arquivo_saida.write("\n" + "=" * 45 + "\n")
